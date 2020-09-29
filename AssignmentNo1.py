@@ -11,7 +11,7 @@ for line in fh:
     for a in li1:
         li.append(a)
         count=count+1
- for w in list:
+ for w in li:
     if w in di:
         di[w]=di[w]+1
     else:
