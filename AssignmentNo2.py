@@ -7,12 +7,13 @@ def get_word() :
     
 def play(word) :
     word_complition = "_" * len(word)
+    guessed = False
     guessed_letters = []
     guessed_word = []
     tries = 6
     print("Let's Play Hangman!")
     print(display_hangman(tries))
-    print(work_complition)
+    print(word_complition)
     print("\n")
     while not guessed and tries > 0:
         guess = input("Please guess letter or a word:").upper()
@@ -51,7 +52,7 @@ def play(word) :
             print("Not a valid guess:",guess)
             
         print(display_hangman(tries))
-        print(work_complition)
+        print(word_complition)
         print("\n")
         
     if guessed:
@@ -60,7 +61,7 @@ def play(word) :
     else :
         print("Sorry! You ran out of time? the word is",word,". May be next time.")
 
-def display_hangman(t) :
+def display_hangman(tries) :
     stages = [ """
                   |_____________
                   |       |
@@ -130,7 +131,7 @@ def display_hangman(t) :
        
   
   
-def main():
+def main() :
     word = get_word()
     play(word)
     while input("Play Again(Y/N):") == 'Y':
@@ -138,6 +139,16 @@ def main():
         play(word)
         
     
-if __name__ == "__main__" :
+if __name__ == '__main__' :
     main()        
+    
+                
+      
+        
+       
+  
+  
+        
+    
+
     
