@@ -1,8 +1,8 @@
 #Write Python code for Guessing game /Hangman .
 import random 
-word_li = ['word','file','blossom','danger','black']
+word_list = ['word','file','blossom','danger','black']
 def get_word() :
-    word = random.choice(word_li)
+    word = random.choice(word_list)
     return word.upper()
     
 def play(word) :
@@ -133,7 +133,7 @@ def display_hangman(t) :
 def main():
     word = get_word()
     play(word)
-    while input("Play Again(Y/N):") == 'Y:
+    while input("Play Again(Y/N):") == 'Y':
         word = get_word()
         play(word)
         
