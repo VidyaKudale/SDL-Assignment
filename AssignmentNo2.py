@@ -19,14 +19,6 @@ def play(word) :
         guess = input("Please guess letter or a word:").upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in word :
-                print("You have already guessed the letter",guess)
-                
-            elif guess not in word :
-                print(guess," is not in word!")
-                tries -= 1
-                guessed_letters.append(guess)
-                
-            else :
                 print("Good job",guess,"is in the word")
                 guessed_letters.append(guess)
                 word_as_list = list(word_complition)
@@ -36,6 +28,16 @@ def play(word) :
                 word_complition = "".join(word_as_list)
                 if "_" not in word_complition:
                     guess  = True
+                
+            elif guess not in word :
+                print(guess," is not in word!")
+                tries -= 1
+                guessed_letters.append(guess)
+                
+            else :
+                print("You have already guessed the letter",guess)
+                
+     
             
         elif len(guess) == len(word) and guess.isalpha() :
             if guess in guessed_word :
