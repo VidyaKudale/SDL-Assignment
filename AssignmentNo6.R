@@ -200,6 +200,91 @@ for(x in multiarray){
 }
 
 # 5. Operations on Factors  data type
+# Create a factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+# Print the factor
+music_genre
+
+# To only print levels
+levels(music_genre)
+
+# To print factor length
+length(music_genre)
+
+# Accessing item at index 3
+music_genre[3]
+
+# Item can be change 
+music_genre[3] <- "Pop"
+
+# Item value cannot be replaced by any value which does not exist in factor level
+music_genre[3] <- "Opera" # Will give an error
+
+# If item exist in levels of factor it can be replace 
+levels = c("Classic", "Jazz", "Pop", "Rock", "Opera"))
+
+music_genre[3] <- "Opera"
 
 
 # 6. Operations on Data Frames data type
+ Create a data frame
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Print the data frame
+Data_Frame
+
+# Summarize data frame
+summary(Data_Frame)
+
+#We can use single brackets [ ], double brackets [[ ]] or $ to access columns from a data frame
+Data_Frame[1]
+
+Data_Frame[["Training"]]
+
+Data_Frame$Training
+
+# Add a new row using rbind
+New_row_DF <- rbind(Data_Frame, c("Strength", 110, 110))
+
+# Add a new column using cbind
+New_col_DF <- cbind(Data_Frame, Steps = c(1000, 6000, 2000))
+
+# Print the new row
+New_row_DF
+
+# Remove the first row and column
+Data_Frame_New <- Data_Frame[-c(1), -c(1)]
+
+# Display dimensions
+dim(Data_Frame)
+
+# ncol and nrow gives no of rows and columns of data frame respectively
+ncol(Data_Frame)
+nrow(Data_Frame)
+
+# length of data frame (no of fields)
+length(Data_Frame)
+
+#Use the rbind() function to combine two or more data frames in R vertically:
+
+Data_Frame2 <- data.frame (
+  Training = c("Stamina", "Stamina", "Strength"),
+  Pulse = c(140, 150, 160),
+  Duration = c(30, 30, 20)
+)
+
+New_Data_Frame <- rbind(Data_Frame, Data_Frame2)
+
+Data_Frame4 <- data.frame (
+  Steps = c(3000, 6000, 2000),
+  Calories = c(300, 400, 300)
+)
+
+New_Data_Frame1 <- cbind(Data_Frame, Data_Frame4)
+New_Data_Frame
+
