@@ -2,7 +2,7 @@
 #Problem Statement: To study and practice various commands using different Data Types ,
 #  Graphics and Control Structures on R tool and study and practice of various control structures.
 
-
+############################## A #############################################
 # 1. Operations on vector data typpe
 # Vector of strings
 fruits <- c("banana", "apple", "orange",, "mango", "lemon")
@@ -287,4 +287,157 @@ Data_Frame4 <- data.frame (
 
 New_Data_Frame1 <- cbind(Data_Frame, Data_Frame4)
 New_Data_Frame
+
+######################################### B #######################################3333333
+
+# 1. Pie charts operations
+# pie() function is use to draw pie chart
+pie(c(10,20,40,30))
+
+# Create a vector of pies
+x <- c(10,20,30,40)
+
+# Display the pie chart and start the first pie at 90 degrees
+pie(x, init.angle = 90)
+
+# Create a vector of labels
+mylabel <- c("Apples", "Bananas", "Cherries", "Dates")
+
+# Create a vector of colors
+colors <- c("blue", "yellow", "green", "black")
+
+# Display the pie chart with colors
+pie(x, label = mylabel, main = "Fruits", col = colors)
+
+# Display the explanation box
+legend("bottomright", mylabel, fill = colors)
+#The legend can be positioned as either:bottomright, bottom, bottomleft, left, topleft, top, topright, right, center
+
+#2. Bar charts operations
+
+#Use the barplot() function to draw a vertical bar chart:
+# x-axis values
+x <- c("A", "B", "C", "D")
+
+# y-axis values
+y <- c(2, 4, 6, 8)
+
+barplot(y, names.arg = x)
+
+# cols attribute can be used to change color of bers
+barplot(y, names.arg = x, col = "yellow")
+
+# Density attribute is use to change bar texture
+barplot(y, names.arg = x, density = 10)
+
+# Bar width can be provide to each bar
+barplot(y, names.arg = x, width = c(1,2,3,4))
+
+# Horizontal bars by default bars are vertical
+barplot(y, names.arg = x, horiz = TRUE)
+
+# 3. Boxplot operations
+
+
+# 5. Line Graph
+# plotting simple line graph using type l
+plot(1:10, type="l", col="blue")
+
+# lwd provides line width
+plot(1:10, type="l", lwd=2)
+
+# lty can display value of lty is between 0 to 6
+plot(1:10, type="l", lwd=5, lty=3)
+
+
+# Multiline graph
+bitmap(file="out.png")
+
+line1 <- c(1,2,3,4,5,10)
+line2 <- c(2,5,7,8,9,10)
+line3 <- c(3,5,8,9)
+plot(line1, type = "l", col = "blue")
+lines(line2, type="l", col = "red")
+lines(line3,type="l", col = "yellow")
+
+
+# 6. Scatterplots
+# Simple scatterplot
+x <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+y <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+
+plot(x, y)
+
+# day one, the age and speed of 12 cars:
+x1 <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+y1 <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+
+# day two, the age and speed of 15 cars:
+x2 <- c(2,2,8,1,15,8,12,9,7,3,11,4,7,14,12)
+y2 <- c(100,105,84,105,90,99,90,95,94,100,79,112,91,80,85)
+
+plot(x1, y1, main="Observation of Cars", xlab="Car age", ylab="Car speed", col="red", cex=2)
+points(x2, y2, col="blue", cex=2)
+
+########################################## C ##############################################
+# Control structure in R
+
+# 1.If,els :
+a = 2
+b = 5
+
+ if (b > a) {
+  print("b is greater than a")
+}
+ else{
+  print("a is greater than b")
+}
+
+if (b > a) {
+  print("b is greater than a")
+} else if (a == b) {
+  print("a and b are equal")
+} else {
+  print("a is greater than b")
+}
+# 2. Vectorization with ifelse:
+ ifelse(a <= b,"a is greater than b","b is greater than a")
+
+# 3. Other valid ways of if else:
+a <- if (a < 30){
+  30
+}else{
+  10
+  }
+
+# 4. For loop
+for (x in 1:10) {
+  print(x)
+}
+# 5. While loop:
+i <- 1
+while (i < 6) {
+  print(i)
+  i <- i + 1
+}
+# 6. Repeat :
+
+# 7. Next :
+i <- 0
+while (i < 6) {
+  i <- i + 1
+  if (i == 3) {
+    next
+  }
+  print(i)
+}
+# 8. Break
+fruits <- list("apple", "banana", "cherry")
+
+for (x in fruits) {
+  if (x == "cherry") {
+    break
+  }
+  print(x)
+}
 
