@@ -421,6 +421,15 @@ while (i < 6) {
   i <- i + 1
 }
 # 6. Repeat :
+a = 10 
+b = 20
+repeat{
+ if(a==b){
+ break
+ }
+print(a)
+ a = a + 2
+}
 
 # 7. Next :
 i <- 0
