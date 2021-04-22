@@ -1,4 +1,6 @@
-#Problem Statement : 
+# Problem Statement : A Mall has number of items for sale. Build a required Database to develop
+# BA&I tool for considering one aspect of growth to the business Such as organization of products
+# based on demand and patterns .
 
 # Load the libraries
 library(arules)
